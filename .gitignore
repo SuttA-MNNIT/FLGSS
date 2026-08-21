@@ -1,0 +1,49 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyc
+
+# Caches and checkpoints
+.ipynb_checkpoints/
+.pytest_cache/
+.vscode/
+.idea/
+
+# Data and Cache
+data_cache/
+src/data_cache/
+*.zip
+*.tar.gz
+*.txt.gz
+*.pt
+*.pth
+*.npy
+*.npz
+
+# Results and Output directories
+results/
+src/results/
+results_*/
+src/results_*/
+paper_results/
+src/paper_results/
+paper_*/
+src/paper_*/
+*.png
+*.jpg
+*.jpeg
+*.svg
+
+# Paper and LaTeX materials
+*.tex
+*.bib
+*.cls
+*.bst
+*.pdf
+*.aux
+*.log
+*.out
+*.synctex.gz
+*.fls
+*.fdb_latexmk
