@@ -11,6 +11,8 @@ __pycache__/
 .idea/
 
 # Data and Cache
+data/
+runs/
 data_cache/
 src/data_cache/
 *.zip
