@@ -140,45 +140,6 @@ python run_experiments.py --suite table4
 python run_experiments.py --suite plots
 ```
 
----
-
-## 📈 Benchmark Reference Results
-
-### Table I: Final Test Accuracy (%) vs. Degree of Non-IID Skew ($\alpha$)
-| Algorithm | Core Paradigm | CIFAR-10 ($\alpha=0.1$) | UCI-HAR ($\alpha=0.1$) | Intel Dataset | N-BaIoT |
-| :--- | :--- | :---: | :---: | :---: | :---: |
-| **FedAvg** | Weight Averaging | 68.95 ± 1.21% | 85.27 ± 1.15% | 81.44 ± 1.42% | 86.41 ± 1.2% |
-| **FedProx** | Reg. Weight Avg. | 69.58 ± 1.10% | 86.05 ± 1.05% | 82.17 ± 1.35% | 87.12 ± 1.1% |
-| **SCAFFOLD** | Corrected W. Avg. | 69.31 ± 1.15% | 85.88 ± 1.10% | 81.95 ± 1.38% | 86.95 ± 1.2% |
-| **MOON** | Repr. Contrastive | 72.84 ± 0.98% | 89.05 ± 0.90% | 85.19 ± 1.20% | 90.54 ± 0.9% |
-| **FedSAM** | Sharpness Aware | 73.15 ± 0.92% | 89.44 ± 0.85% | 86.45 ± 1.15% | 91.20 ± 0.8% |
-| **FedKD** | Distillation | 74.90 ± 0.90% | 89.80 ± 0.82% | 87.10 ± 1.05% | 92.40 ± 0.8% |
-| **FedClustering** | Semantic Clustering | 76.88 ± 0.80% | 90.15 ± 0.75% | 88.65 ± 0.95% | 93.10 ± 0.7% |
-| **PFedKD** | Personalized KD | 76.50 ± 0.85% | 90.30 ± 0.78% | 88.40 ± 0.95% | 93.55 ± 0.6% |
-| **FLGSS (Ours)** | **Semantic GMM** | **85.23 ± 0.42%** | **93.52 ± 0.40%** | **95.61 ± 0.55%** | **98.15 ± 0.2%** |
-
-### Table II: Unsupervised Anomaly Detection (AUC Score)
-| Algorithm | CIFAR-10 AUC | Intel Berkeley Lab AUC |
-| :--- | :---: | :---: |
-| **Federated Autoencoder (FedAE)** | 0.79 | 0.82 |
-| **FLGSS (Ours)** | **0.98** | **0.99** |
-
-### Table III: On-Device Resource Usage per Client Round
-| Task | Algorithm | Peak Memory (MB) | Energy (Joules) | Comm. Overhead |
-| :--- | :--- | :---: | :---: | :---: |
-| **Vision (CIFAR-10)** | FedAvg / FedProx | 285.4 MB | 18.2 J | 9,146 - 10,171 MB |
-| | **FLGSS (Ours)** | **89.2 MB** | **11.5 J** | **830 MB (>11x Lower)** |
-| **Sensor (HAR / Intel)** | FedAvg / FedProx | 112.5 MB | 9.8 J | Moderate |
-| | **FLGSS (Ours)** | **35.1 MB** | **5.1 J** | **>10x Lower** |
-
-### Benchmark Figures
-- **Convergence Curves (`Figure_1.pdf` / `Figure_4_Updated.pdf`)**: Convergence curves comparing all 9 algorithms on non-IID CIFAR-10 ($\alpha=0.1$).
-- **Communication Cost (`comm_cost.pdf`)**: Horizontal lollipop plot on log scale showing total communication cost (MB) to reach 70% accuracy.
-- **Anchor Model Sensitivity (`abl1.pdf`)**: Anchor Model capacity sensitivity (Scratch vs ResNet-18 vs ResNet-50).
-- **Latent Dimension Trade-off (`abl2.pdf`)**: Semantic space latent dimension trade-off ($d \in \{32, 64, 128, 256, 512\}$).
-- **Differential Privacy Trade-off (`abl3.pdf`)**: Client-level Differential Privacy utility-privacy trade-off ($\epsilon \in \{1.0, 2.0, 5.0, 10.0, 20.0\}$).
-
----
 
 ## 🛡️ License
 This project is open-source under the MIT License.
